@@ -1,0 +1,14 @@
+<?php
+$visitsFile = "visits.txt";
+
+if (file_exists($visitsFile)) {
+    $visits = (int) file_get_contents($visitsFile);
+    $visits++;
+} else {
+    $visits = 1;
+}
+
+file_put_contents($visitsFile, $visits);
+
+echo "Number of website visits: " . $visits;
+?>
